@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import React from 'react';
+import FlavanoidsTable from './components/flavanoids';
+import GammaTable from './components/gamma';
+import wineData from './data/wineData.json';
+
+const App = () => {
+    return (
+        <div>
+            <h1>Wine Stats</h1>
+            <FlavanoidsTable data={wineData} propertyName="Flavanoids" />
+            <h1>Gamma Stats</h1>
+            <GammaTable data={wineData} />
+        </div>
+    );
+};
 
 export default App;
